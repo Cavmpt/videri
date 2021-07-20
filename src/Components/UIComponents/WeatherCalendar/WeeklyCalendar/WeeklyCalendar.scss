@@ -1,0 +1,18 @@
+.weekly-calendar-table {
+  border: 1px solid black;
+  width: 100%;
+
+  tr {
+    border: 1px solid black;
+    height: 4rem;
+    text-align: left;
+
+    th {
+      border: 1px solid black;
+    }
+
+    td {
+      border: 1px solid black;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@import '../../../Styles/Mixins/glass.scss';
+
+.weather-page {
+  height: 45rem;
+  border-radius: 20px;
+  @include glass;
+}

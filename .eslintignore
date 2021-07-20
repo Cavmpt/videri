@@ -1,0 +1,17 @@
+!**/.eslintrc*
+node_modules*
+dist
+build/**/*
+*.svg
+*.ico
+*.json
+.gitignore
+*.md
+*.log
+*.lock
+build
+config
+
+webpack.config.js
+webpack.dev.js
+jest.config.js

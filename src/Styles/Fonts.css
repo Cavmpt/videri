@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'orbitron';
+  src: url(../Assets/Fonts/orbitron-bold-webfont.woff) format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'orbitron';
+  src: url(../Assets/Fonts/orbitron-light-webfont.woff) format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'orbitron';
+  src: url(../Assets/Fonts/orbitron-medium-webfont.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
