@@ -7,7 +7,6 @@ import {
   IAlertsInterface,
   IErrorsInterface,
 } from './Store-types'
-// import * as weatherData from './weather.json'
 
 export type ContextType = {
   currentWeather: ICurrentWeatherInterface | undefined

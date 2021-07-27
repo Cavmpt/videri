@@ -17,7 +17,6 @@ export default function HighLowTemperatureDay(
    * THE HIGH LOW TEMPERATURE OF THE DAY
    * TROUGH HOURLY TEMPERATURE
    */
-
   hourlyWeatherArray.forEach(element => {
     if (element.temp > highLowTemperature.high) {
       highLowTemperature.high = element.temp

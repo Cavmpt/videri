@@ -15,11 +15,10 @@ export interface IDailyWeatherSliceProps {
 }
 
 export default function DailyWeatherSlice(props: IDailyWeatherSliceProps) {
-  const {date, highTemp, lowTemp, pop, icon} = props
+  const {highTemp, lowTemp, pop, icon} = props
 
   return (
     <div className='weekly-calendar-slice'>
-      {date}
       {highTemp} {lowTemp} {pop} {icon}
     </div>
   )

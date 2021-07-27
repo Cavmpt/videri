@@ -60,9 +60,11 @@ export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
     ) {
       setLoading(false)
       setDateTime(unixTimestampToDate(dt as number))
-      setHighLowTemp(
-        HighLowTemperature(hourlyWeather as IHourlyWeatherInterface[]),
-      )
+      if (hourlyWeather !== undefined) {
+        setHighLowTemp(
+          HighLowTemperature(hourlyWeather as IHourlyWeatherInterface[]),
+        )
+      }
     }
   }, [currentWeather, dt, hourlyWeather])
 

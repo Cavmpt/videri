@@ -1,6 +1,8 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {BrowserRouter as Router, useRoutes} from 'react-router-dom'
 import ReactDOM from 'react-dom'
+
+import FetchBoundary from './Config/fetch-boundary'
 
 import ErrorBoundary from './Components/UIComponents/Notifications/ErrorBoundary/ErrorBoundary'
 
@@ -33,7 +35,9 @@ ReactDOM.render(
     <Router>
       <Provider>
         <ErrorBoundary>
-          <App />
+          <FetchBoundary>
+            <App />
+          </FetchBoundary>
         </ErrorBoundary>
       </Provider>
     </Router>
