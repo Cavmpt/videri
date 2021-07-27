@@ -3,7 +3,8 @@ import * as React from 'react'
 import './RoundSkeleton.scss'
 
 export interface IRoundSkeletonProps {
-  placeholder?: null
+  height: string
+  width: string
 }
 
 export default function RoundSkeleton(props: IRoundSkeletonProps): JSX.Element {

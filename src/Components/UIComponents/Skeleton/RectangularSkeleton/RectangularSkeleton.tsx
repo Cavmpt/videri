@@ -1,10 +1,14 @@
 import * as React from 'react'
 import './RectangularSkeleton.scss'
 
-export interface IRectangularSkeletonProps {}
+export interface IRectangularSkeletonProps {
+  height: string
+  width: string
+}
 
 export default function RectangularSkeleton(
   props: IRectangularSkeletonProps,
 ): JSX.Element {
-  return <div className='rectangular-skeleton' />
+  const {height, width} = props
+  return <div style={{height, width}} className='rectangular-skeleton' />
 }

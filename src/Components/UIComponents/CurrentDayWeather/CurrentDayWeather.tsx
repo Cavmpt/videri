@@ -70,21 +70,31 @@ export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
 
   return (
     <div className='current-day-weather'>
-      {month || <RectangularSkeleton />}
-      {'Montreal Canada' || <RectangularSkeleton />}
-      {icon ? (
-        <img
-          width='300'
-          src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
-          alt='weather-api-icon'
-        />
-      ) : (
-        <RoundSkeleton />
-      )}
+      <div className='current-day-weather__daily-logo-wrap'>
+        <div className='current-day-weather__daily-logo'>
+          {icon ? (
+            <img
+              width='200'
+              src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+              alt='weather-api-icon'
+            />
+          ) : (
+            <div />
+          )}
+        </div>
+      </div>
+      <div className='current-day-weather__description'>
+        {description || <RectangularSkeleton height='2rem' width='1rem' />}
+      </div>
+      <div className='current-day-weather__location-info'>
+        {'Montreal Canada' || (
+          <RectangularSkeleton height='2rem' width='1rem' />
+        )}
+        {month || <RectangularSkeleton height='2rem' width='1rem' />}
+      </div>
       {temp}
-      {description || <RectangularSkeleton />}
-      {high || <RectangularSkeleton />}
-      {low || <RectangularSkeleton />}
+      {high || <RectangularSkeleton height='2rem' width='1rem' />}
+      {low || <RectangularSkeleton height='2rem' width='1rem' />}
     </div>
   )
 }

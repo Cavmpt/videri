@@ -1,2 +1,25 @@
-.current-day-page {
+@import '../../../Styles/Mixins/glass.scss';
+
+.current-day-weather {
+  &__daily-logo-wrap {
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  &__daily-logo {
+    transform: scale(0.7);
+    margin-top: 1rem;
+    border-radius: 50%;
+    @include dark-glass;
+  }
+
+  &__description {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__location-info {
+    text-align: center;
+  }
 }

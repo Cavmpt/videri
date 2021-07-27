@@ -44,13 +44,13 @@ export default function WeeklyCalendar(
     if (dailyWeather === undefined) {
       return (
         <>
-          <RectangularSkeleton />
-          <RectangularSkeleton />
-          <RectangularSkeleton />
-          <RectangularSkeleton />
-          <RectangularSkeleton />
-          <RectangularSkeleton />
-          <RectangularSkeleton />
+          <RectangularSkeleton height='2rem' width='1rem' />
+          <RectangularSkeleton height='2rem' width='1rem' />
+          <RectangularSkeleton height='2rem' width='1rem' />
+          <RectangularSkeleton height='2rem' width='1rem' />
+          <RectangularSkeleton height='2rem' width='1rem' />
+          <RectangularSkeleton height='2rem' width='1rem' />
+          <RectangularSkeleton height='2rem' width='1rem' />
         </>
       )
     }
