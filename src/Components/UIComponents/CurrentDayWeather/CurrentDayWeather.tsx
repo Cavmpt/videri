@@ -26,25 +26,10 @@ export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
   const [dateTime, setDateTime] = useState<IDateTimeInterface | undefined>()
 
   const {currentWeather, hourlyWeather} = context
-  const {
-    dt,
-    sunrise,
-    sunset,
-    temp,
-    feels_like,
-    pressure,
-    humidity,
-    dew_point,
-    uvi,
-    clouds,
-    visibility,
-    wind_speed,
-    wind_deg,
-    weather,
-  } = currentWeather || {}
+  const {dt, weather} = currentWeather || {}
 
-  const {id, main, description, icon} = weather?.[0] || {}
-  const {date, hour, min, month, sec, year} = dateTime || {}
+  const {description, icon} = weather?.[0] || {}
+  const {date, month, year} = dateTime || {}
 
   useEffect(() => {
     if (currentWeather !== undefined && currentWeather.dt !== undefined) {

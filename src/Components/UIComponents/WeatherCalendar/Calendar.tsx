@@ -20,7 +20,7 @@ export default function Calendar(props: ICalendarProps) {
         element: <WeeklyCalendar />,
       },
       {
-        path: '/D3',
+        path: '/chart',
         element: <D3Calendar />,
       },
       {

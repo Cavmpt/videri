@@ -20,7 +20,7 @@ import {Provider} from './Store/Provider'
 
 const routesArray = [
   {
-    path: '/',
+    path: '/*',
     element: <WeatherPage />,
   },
 ]
