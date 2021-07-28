@@ -53,3 +53,38 @@
   font-weight: lighter;
   font-style: italic;
 }
+
+@font-face {
+  font-family: 'roboto';
+  src: url(../Assets/Fonts/Roboto/Roboto-BoldItalic.ttf) format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url(../Assets/Fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url(../Assets/Fonts/Roboto/Roboto-Black.ttf) format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url(../Assets/Fonts/Roboto/Roboto-BlackItalic.ttf) format('truetype');
+  font-weight: bolder;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ubuntu';
+  src: url(../Assets/Fonts/Ubuntu/Ubuntu-Title.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

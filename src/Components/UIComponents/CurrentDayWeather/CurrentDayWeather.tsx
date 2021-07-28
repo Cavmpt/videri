@@ -6,11 +6,12 @@ import {
   unixTimestampToDate,
   IDateTimeInterface,
 } from '../../../Helpers/dt-to-datetime'
+
 import HighLowTemperature, {
   IHighLowTemperatureInterface,
 } from '../../../Helpers/high-low-temperature'
 
-import RoundSkeleton from '../Skeleton/RoundSkeleton/RoundSkeleton'
+import CurrentDayTooltip from './CurrentDayTooltip/CurrentDayTooltip'
 import RectangularSkeleton from '../Skeleton/RectangularSkeleton/RectangularSkeleton'
 
 import './CurrentDayWeather.scss'
@@ -23,7 +24,6 @@ export interface ISelectedDayWeatherProps {
 
 export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
   const context = useContext<ContextType>(Context)
-  const [loading, setLoading] = useState<boolean>(false)
   const [dateTime, setDateTime] = useState<IDateTimeInterface | undefined>()
   const [HighLowTemp, setHighLowTemp] = useState<
     IHighLowTemperatureInterface | undefined
@@ -52,13 +52,7 @@ export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
   const {high, low} = HighLowTemp || {}
 
   useEffect(() => {
-    if (currentWeather === undefined) {
-      setLoading(true)
-    } else if (
-      currentWeather !== undefined &&
-      currentWeather.dt !== undefined
-    ) {
-      setLoading(false)
+    if (currentWeather !== undefined && currentWeather.dt !== undefined) {
       setDateTime(unixTimestampToDate(dt as number))
       if (hourlyWeather !== undefined) {
         setHighLowTemp(
@@ -70,6 +64,32 @@ export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
 
   return (
     <div className='current-day-weather'>
+      <div className='current-day-weather__description-tooltip-wrap'>
+        <div className='current-day-weather__description'>
+          {description || <RectangularSkeleton height='1rem' width='8rem' />}
+        </div>
+        <div className='current-day-weather__tooltip'>
+          <CurrentDayTooltip />
+        </div>
+      </div>
+      <div className='current-day-weather__location-info'>
+        {currentWeather ? (
+          <>{'Montreal, Canada '}</>
+        ) : (
+          <RectangularSkeleton height='1rem' width='6rem' />
+        )}
+      </div>
+      <div className='current-day-weather__date-info'>
+        {currentWeather ? (
+          <>
+            {`${month} `}
+            {`${date} `}
+            {year}
+          </>
+        ) : (
+          <RectangularSkeleton height='1rem' width='12rem' />
+        )}
+      </div>
       <div className='current-day-weather__daily-logo-wrap'>
         <div className='current-day-weather__daily-logo'>
           {icon ? (
@@ -79,22 +99,26 @@ export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
               alt='weather-api-icon'
             />
           ) : (
-            <div />
+            <div
+              style={{
+                marginTop: '1rem',
+                height: '200px',
+                width: '200px',
+                borderRadius: '50%',
+              }}
+            />
           )}
         </div>
       </div>
-      <div className='current-day-weather__description'>
-        {description || <RectangularSkeleton height='2rem' width='1rem' />}
+      <div className='current-day-weather__temperature-wrap'>
+        <div>Current temperature : {temp} F</div>
+        <div>
+          High temperature :
+          {` ${high}` || <RectangularSkeleton height='2rem' width='1rem' />} F
+        </div>
+        Low temperature :
+        {` ${low}` || <RectangularSkeleton height='2rem' width='1rem' />} F
       </div>
-      <div className='current-day-weather__location-info'>
-        {'Montreal Canada' || (
-          <RectangularSkeleton height='2rem' width='1rem' />
-        )}
-        {month || <RectangularSkeleton height='2rem' width='1rem' />}
-      </div>
-      {temp}
-      {high || <RectangularSkeleton height='2rem' width='1rem' />}
-      {low || <RectangularSkeleton height='2rem' width='1rem' />}
     </div>
   )
 }

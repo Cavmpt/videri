@@ -1,0 +1,25 @@
+@import '../../../../Styles/Mixins/glass.scss';
+
+.show-tooltip {
+  position: fixed;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: arial;
+  font-size: 0.8rem;
+  @include opaque-glass;
+}
+
+.hide-tooltip {
+  display: none;
+}
+.exclamation-mark {
+  border-radius: 50%;
+  height: 1.2rem;
+  width: 1.3rem;
+  @include dark-glass;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

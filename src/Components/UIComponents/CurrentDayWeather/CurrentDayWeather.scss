@@ -1,6 +1,8 @@
 @import '../../../Styles/Mixins/glass.scss';
 
 .current-day-weather {
+  padding: 2rem;
+
   &__daily-logo-wrap {
     width: 100%;
     display: grid;
@@ -14,12 +16,42 @@
     @include dark-glass;
   }
 
-  &__description {
+  &__temperature-wrap {
+    display: grid;
+    font-family: 'roboto';
     text-align: center;
-    margin-bottom: 1rem;
+  }
+
+  &__description-tooltip-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__description {
+    font-family: 'roboto';
+    font-weight: bolder;
+    color: rgb(0, 0, 46);
+    font-size: 2rem;
+    text-shadow: 2px 2px 20px #dfdfdf;
+    margin-bottom: 0.5rem;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 
   &__location-info {
-    text-align: center;
+    font-family: 'arial';
+    font-weight: thin;
+    font-style: normal;
+    color: gray;
+    margin-bottom: 0.5rem;
+  }
+
+  &__date-info {
+    font-family: 'arial';
+    font-weight: thin;
+    font-style: normal;
+    color: gray;
   }
 }
