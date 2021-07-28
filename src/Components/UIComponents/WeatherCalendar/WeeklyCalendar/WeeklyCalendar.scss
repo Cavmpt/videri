@@ -1,18 +1,11 @@
-.weekly-calendar-table {
-  border: 1px solid black;
-  width: 100%;
+.weekly-weather-pannel {
+  display: inline-flex;
+  margin-top: 1rem;
+  margin-left: -0.5rem;
+  font-family: arial;
+  font-size: 0.7rem;
 
-  tr {
-    border: 1px solid black;
-    height: 4rem;
-    text-align: left;
-
-    th {
-      border: 1px solid black;
-    }
-
-    td {
-      border: 1px solid black;
-    }
+  &__skeleton {
+    margin: 0rem 0.5rem 0rem 0.5rem;
   }
 }

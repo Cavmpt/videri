@@ -33,7 +33,7 @@ export default function CalendarNav(props: ICalendarNavProps) {
           fontWeight: 'bold',
         }}
       >
-        map
+        Map
       </NavLink>
     </div>
   )

@@ -1,7 +1,7 @@
 @import '../../../Styles/Mixins/glass.scss';
 
 .current-day-weather {
-  padding: 2rem;
+  padding: 1rem 2rem 1.5rem 2rem;
 
   &__daily-logo-wrap {
     width: 100%;
@@ -11,8 +11,8 @@
 
   &__daily-logo {
     transform: scale(0.7);
-    margin-top: 1rem;
     border-radius: 50%;
+    z-index: 5;
     @include dark-glass;
   }
 
@@ -24,7 +24,7 @@
   &__description {
     font-family: 'roboto';
     font-weight: bolder;
-    color: rgb(0, 0, 46);
+    color: white;
     font-size: 2rem;
     text-shadow: 2px 2px 20px #dfdfdf;
     margin-bottom: 0.5rem;

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import React, {useContext, useEffect, useState} from 'react'
 import {Context, ContextType} from '../../../Store/Provider'
-
 import {
   unixTimestampToDate,
   IDateTimeInterface,
@@ -14,7 +13,6 @@ import HighLowTemperature, {
 import CurrentDayTooltip from './CurrentDayTooltip/CurrentDayTooltip'
 import CurrentDayBox from './CurrentDayBox/CurrentDayBox'
 import RectangularSkeleton from '../Skeleton/RectangularSkeleton/RectangularSkeleton'
-
 import './CurrentDayWeather.scss'
 
 import {IHourlyWeatherInterface} from '../../../Store/Store-types'
@@ -86,7 +84,7 @@ export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
         <div className='current-day-weather__daily-logo'>
           {icon ? (
             <img
-              width='200'
+              width='180'
               src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
               alt='weather-api-icon'
             />
