@@ -21,22 +21,8 @@ export default function CurrentDayBox(props: ICurrentDayBoxProps) {
     IHighLowTemperatureInterface | undefined
   >()
 
-  const {
-    dt,
-    sunrise,
-    sunset,
-    temp,
-    feels_like,
-    pressure,
-    humidity,
-    dew_point,
-    uvi,
-    clouds,
-    visibility,
-    wind_speed,
-    wind_deg,
-    weather,
-  } = currentWeather || {}
+  const {dt, temp, pressure, humidity, visibility, wind_speed} =
+    currentWeather || {}
 
   const {high, low} = HighLowTemp || {}
 

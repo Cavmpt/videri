@@ -24,6 +24,17 @@
   &__description {
     font-family: 'roboto';
     font-weight: bolder;
+    background-color: var(--glass-purple-300);
+    background-image: linear-gradient(
+      180deg,
+      var(--glass-purple-300) 20%,
+      var(--glass-blue-400) 90%
+    );
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
     color: white;
     font-size: 2rem;
     text-shadow: 2px 2px 20px #dfdfdf;

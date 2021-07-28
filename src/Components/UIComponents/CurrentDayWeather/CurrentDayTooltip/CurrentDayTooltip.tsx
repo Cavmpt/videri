@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext, useState} from 'react'
 import {Context, ContextType} from '../../../../Store/Provider'
 
 import './CurrentDayTooltip.scss'
@@ -11,13 +11,9 @@ export default function DailyNotification(
 ): JSX.Element {
   const context = useContext<ContextType>(Context)
   const {alerts} = context
-  const {sender_name, event, start, end, description, tags} = alerts?.[0] || {}
+  const {description} = alerts?.[0] || {}
 
   const [showTooltip, setShowTooltip] = useState(false)
-
-  useEffect(() => {
-    console.log('alerts:', alerts)
-  })
 
   return (
     <>

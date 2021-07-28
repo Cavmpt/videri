@@ -6,16 +6,10 @@ import {
   IDateTimeInterface,
 } from '../../../Helpers/dt-to-datetime'
 
-import HighLowTemperature, {
-  IHighLowTemperatureInterface,
-} from '../../../Helpers/high-low-temperature'
-
 import CurrentDayTooltip from './CurrentDayTooltip/CurrentDayTooltip'
 import CurrentDayBox from './CurrentDayBox/CurrentDayBox'
 import RectangularSkeleton from '../Skeleton/RectangularSkeleton/RectangularSkeleton'
 import './CurrentDayWeather.scss'
-
-import {IHourlyWeatherInterface} from '../../../Store/Store-types'
 
 export interface ISelectedDayWeatherProps {
   placeholder?: null

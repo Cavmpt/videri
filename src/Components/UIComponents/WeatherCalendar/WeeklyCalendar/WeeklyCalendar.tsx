@@ -7,7 +7,6 @@ import {unixTimestampToDate} from '../../../../Helpers/dt-to-datetime'
 import RectangularSkeleton from '../../Skeleton/RectangularSkeleton/RectangularSkeleton'
 
 import './WeeklyCalendar.scss'
-import {IDailyWeatherInterface} from '../../../../Store/Store-types'
 
 export interface IWeeklyCalendarProps {
   placeholder?: null
