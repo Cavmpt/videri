@@ -12,6 +12,7 @@ import HighLowTemperature, {
 } from '../../../Helpers/high-low-temperature'
 
 import CurrentDayTooltip from './CurrentDayTooltip/CurrentDayTooltip'
+import CurrentDayBox from './CurrentDayBox/CurrentDayBox'
 import RectangularSkeleton from '../Skeleton/RectangularSkeleton/RectangularSkeleton'
 
 import './CurrentDayWeather.scss'
@@ -25,10 +26,7 @@ export interface ISelectedDayWeatherProps {
 export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
   const context = useContext<ContextType>(Context)
   const [dateTime, setDateTime] = useState<IDateTimeInterface | undefined>()
-  const [HighLowTemp, setHighLowTemp] = useState<
-    IHighLowTemperatureInterface | undefined
-  >()
-  // const [currentLocation, setCurrentLocation] = useState<string>()
+
   const {currentWeather, hourlyWeather} = context
   const {
     dt,
@@ -49,16 +47,10 @@ export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
 
   const {id, main, description, icon} = weather?.[0] || {}
   const {date, hour, min, month, sec, year} = dateTime || {}
-  const {high, low} = HighLowTemp || {}
 
   useEffect(() => {
     if (currentWeather !== undefined && currentWeather.dt !== undefined) {
       setDateTime(unixTimestampToDate(dt as number))
-      if (hourlyWeather !== undefined) {
-        setHighLowTemp(
-          HighLowTemperature(hourlyWeather as IHourlyWeatherInterface[]),
-        )
-      }
     }
   }, [currentWeather, dt, hourlyWeather])
 
@@ -84,7 +76,7 @@ export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
           <>
             {`${month} `}
             {`${date} `}
-            {year}
+            {`${year} `}
           </>
         ) : (
           <RectangularSkeleton height='1rem' width='12rem' />
@@ -110,15 +102,7 @@ export default function SelectedDayWeather(props: ISelectedDayWeatherProps) {
           )}
         </div>
       </div>
-      <div className='current-day-weather__temperature-wrap'>
-        <div>Current temperature : {temp} F</div>
-        <div>
-          High temperature :
-          {` ${high}` || <RectangularSkeleton height='2rem' width='1rem' />} F
-        </div>
-        Low temperature :
-        {` ${low}` || <RectangularSkeleton height='2rem' width='1rem' />} F
-      </div>
+      <CurrentDayBox />
     </div>
   )
 }

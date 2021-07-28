@@ -1,0 +1,54 @@
+.current-day-box {
+  padding: 1rem;
+  height: 10rem;
+  border-radius: 10px;
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+  background: #ff512f;
+  font-family: arial;
+  background: linear-gradient(
+    180deg,
+    var(--glass-purple-300) 20%,
+    var(--glass-blue-400) 90%
+  );
+
+  &__high-low {
+    color: white;
+    font-size: 0.7rem;
+    display: inline-flex;
+  }
+
+  &__low {
+    margin-left: 8rem;
+  }
+
+  &__temperature {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'roboto';
+    font-size: 2rem;
+    color: white;
+  }
+
+  &__wind-speed {
+    margin-left: 8rem;
+  }
+
+  &__humdity-visibility-wrap {
+    margin-top: 1rem;
+    color: white;
+    font-size: 0.7rem;
+    display: inline-flex;
+  }
+
+  &__visibility-pressure-wrap {
+    margin-top: 0.5rem;
+    color: white;
+    font-size: 0.7rem;
+    display: inline-flex;
+  }
+
+  &__pressure {
+    margin-left: 8rem;
+  }
+}

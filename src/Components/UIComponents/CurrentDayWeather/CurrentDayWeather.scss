@@ -16,12 +16,6 @@
     @include dark-glass;
   }
 
-  &__temperature-wrap {
-    display: grid;
-    font-family: 'roboto';
-    text-align: center;
-  }
-
   &__description-tooltip-wrap {
     display: flex;
     justify-content: space-between;
