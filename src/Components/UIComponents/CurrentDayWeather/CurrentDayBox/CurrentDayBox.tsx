@@ -36,7 +36,7 @@ export default function CurrentDayBox(props: ICurrentDayBoxProps) {
 
   return (
     <div>
-      <div className='current-day-box'>
+      <div className='current-day-box' data-testid='current-day-box'>
         <div className='current-day-box__high-low'>
           <div className='current-day-box__high'>
             {high ? (
@@ -52,7 +52,10 @@ export default function CurrentDayBox(props: ICurrentDayBoxProps) {
               <RectangularSkeleton height='0.5rem' width='5rem' />
             )}
           </div>
-          <div className='current-day-box__low'>
+          <div
+            className='current-day-box__low'
+            data-testid='current-day-box__low'
+          >
             {low ? (
               <>
                 <span
